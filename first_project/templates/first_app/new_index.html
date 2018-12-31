@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>New Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Hi welcome here</h1>
+    <h2>AccessRecords are here:</h2>
+
+    <div class="djangtwo">
+        {% if access_records %}
+            <table>
+                <thead>
+                    <th>Site Name</th>
+                    <th>Date Accessed</th>
+                </thead>
+            
+
+            {% for accessrecord in access_records %}
+                <tr>
+                    <td>{{ accessrecord.name }}</td>
+                    <td>{{ accessrecord.date }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        {% else %}
+            <p>No access records found</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
