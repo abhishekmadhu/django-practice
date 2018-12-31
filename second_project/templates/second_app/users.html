@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Here are your users:</h1>
+    <ol>
+    {% for user in users%}
+        
+            <li>
+                User Info:
+                <ul>
+                    <li>First Name: {{ user.first_name}}</li>
+                    <li>Last Name: {{ user.last_name}}</li>
+                    <li>Email: {{ user.email}}</li>
+                </ul>
+            </li>
+        
+    {% endfor %}
+    </ol>
+</body>
+</html>
