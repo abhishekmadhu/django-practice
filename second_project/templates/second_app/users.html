@@ -7,10 +7,11 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <script src="main.js"></script>
 </head>
 <body>
-    <h1>Here are your users:</h1>
+    <!-- <h1>Here are your users:</h1>
     <ol>
     {% for user in users%}
         
@@ -24,6 +25,19 @@
             </li>
         
     {% endfor %}
-    </ol>
+    </ol> -->
+
+    <div class="container">
+        
+            <h1>Please Sign Up here!</h1>
+            <form action="" method="POST">
+                {{ form.as_p}}
+                {% csrf_token %}
+                <input type="submit" class="btn btn-primary" value="Submit">
+            </form>
+        
+    </div>
+
+    
 </body>
 </html>
